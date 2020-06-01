@@ -10,12 +10,12 @@
     <img alt="Issues" src="https://img.shields.io/github/issues/wesleyfeitosa/ecoleta?color=34CB79" />
   </a>
 
-  <a href="https://github.com/wesleyfeitosa/ecoleta/stargazers" style="text-decoration: none">
-    <img alt="Stars" src="https://img.shields.io/github/stars/wesleyfeitosa/ecoleta?color=34CB79" />
-  </a>
-
   <a href="#" style="text-decoration: none">
     <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/wesleyfeitosa/ecoleta?color=34CB79" />
+  </a>
+  
+  <a href="https://github.com/wesleyfeitosa/ecoleta/stargazers" style="text-decoration: none">
+    <img alt="Stars" src="https://img.shields.io/github/stars/wesleyfeitosa/ecoleta?style=social" />
   </a>
 
 </p>
