@@ -3,19 +3,19 @@
 <p align="center">
 
   <a href="LICENSE" style="text-decoration: none">
-    <img alt="License" src="https://img.shields.io/github/license/wesleyfeitosa/ecoleta?style=flat-square" />
+    <img alt="License" src="https://img.shields.io/github/license/wesleyfeitosa/ecoleta?color=34CB79" />
   </a>
 
   <a href="https://github.com/wesleyfeitosa/ecoleta/issues" style="text-decoration: none">
-    <img alt="Issues" src="https://img.shields.io/github/issues/wesleyfeitosa/ecoleta?style=flat-square" />
+    <img alt="Issues" src="https://img.shields.io/github/issues/wesleyfeitosa/ecoleta?color=34CB79" />
   </a>
 
   <a href="https://github.com/wesleyfeitosa/ecoleta/stargazers" style="text-decoration: none">
-    <img alt="Stars" src="https://img.shields.io/github/stars/wesleyfeitosa/ecoleta?style=flat-square" />
+    <img alt="Stars" src="https://img.shields.io/github/stars/wesleyfeitosa/ecoleta?color=34CB79" />
   </a>
 
   <a href="#" style="text-decoration: none">
-    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/wesleyfeitosa/ecoleta?style=flat-square" />
+    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/wesleyfeitosa/ecoleta?color=34CB79" />
   </a>
 
 </p>
