@@ -25,7 +25,9 @@
     "rules": {
       "prettier/prettier": "error",
       "class-methods-use-this": "off",
+      "camelcase": "off",
       "@typescript-eslint/camelcase": "off",
+      "import/prefer-default-export": "off",
       "import/extensions": [
         "error",
         "ignorePackages",
