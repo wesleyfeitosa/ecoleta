@@ -2,6 +2,8 @@ import { Request, Response } from 'express';
 
 import knex from '../database/connection';
 
+const API_URL = process.env.APP_API_URL;
+
 class ItemsController {
   async index(request: Request, response: Response): Promise<Response> {
     const items = await knex('items').select('*');
@@ -10,7 +12,7 @@ class ItemsController {
       return {
         id: item.id,
         title: item.title,
-        image_url: `http://localhost:3333/uploads/${item.image}`,
+        image_url: `https://ecoleta-wesleyfeitosa.herokuapp.com/uploads/${item.image}`,
       };
     });
 
