@@ -1,12 +1,12 @@
 import path from 'path';
 
 module.exports = {
-  client: 'pg',
+  client: process.env.DB_CLIENT,
   connection: {
-    host: '127.0.0.1',
-    user: 'postgres',
-    password: 'docker',
-    database: 'ecoleta',
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
   },
   migrations: {
     directory: path.resolve(__dirname, 'src', 'database', 'migrations'),

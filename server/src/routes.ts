@@ -10,6 +10,14 @@ const pointsController = new PointsController();
 const itemsController = new ItemsController();
 const pointsFilterController = new PointsFilterController();
 
+routes.get('/', (request, response) => {
+  return response.json({
+    application: 'Ecoleta API',
+    developer: 'Wesley Feitosa',
+    github: 'https://github.com/wesleyfeitosa',
+  });
+});
+
 routes.get('/items', itemsController.index);
 
 routes.post('/points', pointsController.create);
