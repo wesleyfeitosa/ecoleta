@@ -12,7 +12,7 @@ class ItemsController {
       return {
         id: item.id,
         title: item.title,
-        image_url: `${API_URL}uploads/${item.image}`,
+        image_url: `https://ecoleta-wesleyfeitosa.herokuapp.com/uploads/${item.image}`,
       };
     });
 
