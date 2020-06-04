@@ -7,13 +7,14 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
-    "start": "ts-node src/server.ts",
+    "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules -r dotenv/config src/server.ts",
+    "start": "ts-node -r dotenv/config src/server.ts",
     "knex:seed": "knex --knexfile knexfile.ts seed:run",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "knex": "^0.21.1",
     "pg": "^8.2.1"
