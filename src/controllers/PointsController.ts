@@ -6,15 +6,16 @@ class PointsController {
   async index(request: Request, response: Response): Promise<Response> {
     const points = await knex('points').orderBy('id').select('*');
 
-    const pointsMapped = points.map(point => {
+    const serializedPoints = points.map(point => {
       return {
         ...point,
         latitude: Number(point.latitude),
         longitude: Number(point.longitude),
+        image_url: `https://ecoleta-wesleyfeitosa.herokuapp.com/uploads/${point.image}`,
       };
     });
 
-    return response.json(pointsMapped);
+    return response.json({ points: serializedPoints });
   }
 
   async show(request: Request, response: Response): Promise<Response> {
