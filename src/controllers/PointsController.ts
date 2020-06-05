@@ -15,7 +15,7 @@ class PointsController {
       };
     });
 
-    return response.json({ points: serializedPoints });
+    return response.json(serializedPoints);
   }
 
   async show(request: Request, response: Response): Promise<Response> {
