@@ -1,4 +1,4 @@
-<img alt="GoStack" src="assets/ecoleta.png" />
+<img alt="Ecoleta" src="assets/ecoleta.png" />
 
 <p align="center">
 
@@ -27,10 +27,58 @@ This project was developed with the following technologies:
 - [Node.js](https://nodejs.org/en/)
 - [React](https://reactjs.org)
 - [React Native](https://facebook.github.io/react-native/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Expo](https://expo.io/)
+- [Postgres](https://www.postgresql.org/)
+- [Express](https://expressjs.com/pt-br/)
+- [Knex](http://knexjs.org/)
+- [Multer](https://www.npmjs.com/package/multer)
+- [Celerate](https://github.com/arb/celebrate)
+- [Leaflet](https://leafletjs.com/)
 
 ## 💻 Project
 
 Ecoleta is a garbage collection management application, with this application garbage collection companies will be able to easily find places where garbage is deposited, and citizens will be able to share places where they have garbage deposited for responsible companies to come and collect.
+
+<img alt="Ecoleta" src="assets/ecoleta.gif" />
+
+## :hammer: Deploy
+
+- Backend: https://ecoleta-wesleyfeitosa.herokuapp.com/
+- Frontend/Web: https://ecoleta.wesleyfeitosa.com.br/
+
+## 🤔 How to contribute
+
+- Fork this repository;
+- Create a branch with your feature: `git checkout -b my-feature`;
+- Commit your changes: `git commit -m 'feat: My new feature'`;
+- Push to your branch: `git push origin my-feature`.
+
+After the merge of your pull request is done, you can delete your branch.
+
+## 🔖 How to run
+
+#### Cloning the project
+```sh
+git clone https://github.com/wesleyfeitosa/ecoleta.git
+cd ecoleta
+npm install
+```
+#### Starting Backend
+```sh
+cd server
+yarn start
+```
+#### Starting Frontend
+```sh
+cd web
+yarn start
+```
+#### Starting mobile
+```sh
+cd mobile-app
+yarn start
+```
 
 ## :memo: License
 
