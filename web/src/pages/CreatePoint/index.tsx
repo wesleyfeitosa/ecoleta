@@ -1,5 +1,5 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import axios from 'axios';
@@ -7,6 +7,8 @@ import { LeafletMouseEvent } from 'leaflet';
 
 import api from '../../services/api';
 import logo from '../../assets/logo.svg';
+import Dropzone from '../../components/Dropzone';
+import ToastSuccess from '../../components/ToastSuccess';
 
 import './styles.css';
 
@@ -44,6 +46,10 @@ const CreatePoint: React.FC = () => {
     whatsapp: '',
   });
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
+  const [selectedFile, setSelectFile] = useState<File>();
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const history = useHistory();
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -130,24 +136,34 @@ const CreatePoint: React.FC = () => {
     const [latitude, longitude] = selectedPosition;
     const itemsSelected = selectedItems;
 
-    const data = {
-      name,
-      email,
-      whatsapp,
-      uf,
-      city,
-      latitude,
-      longitude,
-      items: itemsSelected,
-    };
+    const data = new FormData();
+
+    data.append('name', name);
+    data.append('email', email);
+    data.append('whatsapp', whatsapp);
+    data.append('uf', uf);
+    data.append('city', city);
+    data.append('latitude', String(latitude));
+    data.append('longitude', String(longitude));
+    data.append('items', itemsSelected.join(','));
+
+    if (selectedFile) {
+      data.append('image', selectedFile);
+    }
 
     await api.post('points', data);
 
-    alert('Ponto de coleta criado');
+    setIsSuccess(true);
+
+    setTimeout(() => {
+      history.push('/points');
+      setIsSuccess(false);
+    }, 2000);
   }
 
   return (
     <div id="page-create-point">
+      {isSuccess && <ToastSuccess />}
       <header>
         <img src={logo} alt="Ecoleta" />
 
@@ -160,6 +176,8 @@ const CreatePoint: React.FC = () => {
         <h1>
           Cadastro do <br /> ponto de coleta
         </h1>
+
+        <Dropzone onFileUploaded={setSelectFile} />
 
         <fieldset>
           <legend>

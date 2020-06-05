@@ -22,6 +22,7 @@ interface Params {
 interface Data {
   point: {
     image: string;
+    image_url: string;
     name: string;
     email: string;
     whatsapp: string;
@@ -45,7 +46,7 @@ const Detail: React.FC = () => {
     api.get(`points/${routeParams.point_id}`).then((response) => {
       setData(response.data);
     });
-  }, []);
+  }, [routeParams.point_id]);
 
   function handleNavigateBack(): void {
     navigation.goBack();
@@ -78,7 +79,7 @@ const Detail: React.FC = () => {
         <Image
           style={styles.pointImage}
           source={{
-            uri: data.point.image,
+            uri: data.point.image_url,
           }}
         />
 
