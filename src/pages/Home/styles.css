@@ -23,10 +23,11 @@
 #page-home .content main {
   flex: 1;
   max-width: 560px;
+  margin: 38px 0 0;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 #page-home .content main h1 {
@@ -82,6 +83,11 @@
 #page-home .content main a:hover {
   background: #2FB86E;
 }
+
+#page-home .content main .points {
+  margin-top: 15px;
+}
+
 
 @media(max-width: 900px) {
   #page-home .content {

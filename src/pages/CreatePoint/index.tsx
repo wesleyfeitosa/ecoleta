@@ -1,5 +1,5 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import axios from 'axios';
@@ -8,6 +8,7 @@ import { LeafletMouseEvent } from 'leaflet';
 import api from '../../services/api';
 import logo from '../../assets/logo.svg';
 import Dropzone from '../../components/Dropzone';
+import ToastSuccess from '../../components/ToastSuccess';
 
 import './styles.css';
 
@@ -46,6 +47,9 @@ const CreatePoint: React.FC = () => {
   });
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
   const [selectedFile, setSelectFile] = useState<File>();
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const history = useHistory();
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -149,11 +153,17 @@ const CreatePoint: React.FC = () => {
 
     await api.post('points', data);
 
-    alert('Ponto de coleta criado');
+    setIsSuccess(true);
+
+    setTimeout(() => {
+      history.push('/points');
+      setIsSuccess(false);
+    }, 2000);
   }
 
   return (
     <div id="page-create-point">
+      {isSuccess && <ToastSuccess />}
       <header>
         <img src={logo} alt="Ecoleta" />
 
