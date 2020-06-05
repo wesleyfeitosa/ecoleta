@@ -7,6 +7,7 @@ import { LeafletMouseEvent } from 'leaflet';
 
 import api from '../../services/api';
 import logo from '../../assets/logo.svg';
+import Dropzone from '../../components/Dropzone';
 
 import './styles.css';
 
@@ -44,6 +45,7 @@ const CreatePoint: React.FC = () => {
     whatsapp: '',
   });
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
+  const [selectedFile, setSelectFile] = useState<File>();
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -130,16 +132,20 @@ const CreatePoint: React.FC = () => {
     const [latitude, longitude] = selectedPosition;
     const itemsSelected = selectedItems;
 
-    const data = {
-      name,
-      email,
-      whatsapp,
-      uf,
-      city,
-      latitude,
-      longitude,
-      items: itemsSelected,
-    };
+    const data = new FormData();
+
+    data.append('name', name);
+    data.append('email', email);
+    data.append('whatsapp', whatsapp);
+    data.append('uf', uf);
+    data.append('city', city);
+    data.append('latitude', String(latitude));
+    data.append('longitude', String(longitude));
+    data.append('items', itemsSelected.join(','));
+
+    if (selectedFile) {
+      data.append('image', selectedFile);
+    }
 
     await api.post('points', data);
 
@@ -160,6 +166,8 @@ const CreatePoint: React.FC = () => {
         <h1>
           Cadastro do <br /> ponto de coleta
         </h1>
+
+        <Dropzone onFileUploaded={setSelectFile} />
 
         <fieldset>
           <legend>

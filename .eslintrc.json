@@ -40,6 +40,8 @@
       "jsx-a11y/click-events-have-key-events": "off",
       "jsx-a11y/no-noninteractive-element-interactions": "off",
       "no-alert": "off",
+      "react/jsx-props-no-spreading": "off",
+      "react/prop-types": "off",
       "@typescript-eslint/explicit-function-return-type": [
         "error",
         {
