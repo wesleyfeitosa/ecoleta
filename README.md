@@ -33,7 +33,7 @@ This project was developed with the following technologies:
 - [Express](https://expressjs.com/pt-br/)
 - [Knex](http://knexjs.org/)
 - [Multer](https://www.npmjs.com/package/multer)
-- [Celerate](https://github.com/arb/celebrate)
+- [Celebrate](https://github.com/arb/celebrate)
 - [Leaflet](https://leafletjs.com/)
 
 ## 💻 Project
