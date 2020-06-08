@@ -40,7 +40,7 @@ This project was developed with the following technologies:
 
 Ecoleta is a garbage collection management application, with this application garbage collection companies will be able to easily find places where garbage is deposited, and citizens will be able to share places where they have garbage deposited for responsible companies to come and collect.
 
-<img src="https://j.gifs.com/q7E5Y7.gif" alt="ecoletaGif" />
+<img src="assets/ecoleta.gif" frameborder="0" scrolling="no" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></img>
 
 ## :hammer: Deploy
 
