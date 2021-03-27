@@ -45,7 +45,7 @@ Ecoleta is a garbage collection management application, with this application ga
 ## :hammer: Deploy
 
 - Backend: https://ecoleta-wesleyfeitosa.herokuapp.com/
-- Frontend/Web: https://ecoleta.wesleyfeitosa.com.br/
+- Frontend/Web: https://ecoleta.wesleyfeitosa.dev/
 
 ## 🤔 How to contribute
 
